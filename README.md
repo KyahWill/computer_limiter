@@ -4,6 +4,8 @@
 ## Things to do:
 1. Create a python "installer" script that allows for re-configuration whenever necessary.
 2. Create a "GUI" manager for computer limiter.
+3. Add shutdown commands for mac & linux & windows
+
 
 ## Packages Needed:
 1. tkinter
