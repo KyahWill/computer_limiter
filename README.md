@@ -17,3 +17,7 @@
 2. os
 3. datetime
 4. time
+
+## Notes:
+1. To exit early, press 'E'
+2. To test the tkinter module, run it with --test parameter

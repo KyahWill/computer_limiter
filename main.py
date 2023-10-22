@@ -1,5 +1,5 @@
 import os;
-from sys import platform
+from sys import platform, argv
 from datetime import datetime, time
 from tkinter import *
 from time import sleep
@@ -14,8 +14,6 @@ FONT_SIZE = 30
 
 class DialogueBox():
     def check_for_closing(self, event=Tk.event_info):
-        w=Label(self.win,text="Key Pressed:"+event.char)
-        w.place(x=70,y=90)
         print(event.char)
         if(event.char == CLOSE_KEY):
             self.win.destroy()
@@ -72,4 +70,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    print(argv)
+    if(argv[1] == "--test"):
+        open_warning_dialog()
+    else:
+        main() 
