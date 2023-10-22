@@ -9,12 +9,11 @@ REFRESH_PERIOD_SECONDS = 60
 HOURLY_BREAK_IN_MINUTES = [0, 30]
 CLOSE_KEY = 'E'
 FORCED_SLEEP_PERIOD = (time(hour=23,minute=30), time(hour=8,minute=30))
-FONT_SIZE = 30
+FONT_SIZE = 72
 
 
 class DialogueBox():
     def check_for_closing(self, event=Tk.event_info):
-        print(event.char)
         if(event.char == CLOSE_KEY):
             self.win.destroy()
     def disable_closing():
@@ -25,7 +24,7 @@ class DialogueBox():
         Label(self.win, 
             text= message,
             font=('Helvetica bold', FONT_SIZE)
-        ).pack(pady=20)
+        ).pack(expand=True,pady=20)
         self.win.attributes('-topmost',True)
         self.win.overrideredirect(True)
         self.win.after(DIALOG_DURATION_MS, 
@@ -70,7 +69,6 @@ def main():
 
 
 if __name__ == "__main__":
-    print(argv)
     if(argv[1] == "--test"):
         open_warning_dialog()
     else:
