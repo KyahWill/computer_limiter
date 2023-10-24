@@ -8,7 +8,7 @@ DIALOG_DURATION_MS = 300000
 REFRESH_PERIOD_SECONDS = 60
 HOURLY_BREAK_IN_MINUTES = [0, 30]
 CLOSE_KEY = 'E'
-FORCED_SLEEP_PERIOD = (time(hour=23,minute=30), time(hour=8,minute=30))
+FORCED_SLEEP_PERIOD = (time(hour=23,minute=0), time(hour=8,minute=30))
 FONT_SIZE = 72
 
 
@@ -69,7 +69,7 @@ def main():
 
 
 if __name__ == "__main__":
-    if(argv[1] == "--test"):
+    if(len(argv) > 1 and argv[1] == "--test"):
         open_warning_dialog()
     else:
         main() 
