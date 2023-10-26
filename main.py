@@ -2,6 +2,7 @@ import os;
 from sys import platform, argv
 from datetime import datetime, time
 from tkinter import *
+import winsound
 from time import sleep
 
 DIALOG_DURATION_MS = 300000
@@ -13,9 +14,15 @@ FONT_SIZE = 72
 
 
 class DialogueBox():
+    def close_window(self):
+        self.win.destroy()
+        for i in range(3):
+            freq=1000
+            dur=500
+            winsound.Beep(freq,dur)
     def check_for_closing(self, event=Tk.event_info):
         if(event.char == CLOSE_KEY):
-            self.win.destroy()
+            self.close_window()
     def disable_closing():
         pass
     def __init__(self,message=str) -> None:
@@ -28,7 +35,7 @@ class DialogueBox():
         self.win.attributes('-topmost',True)
         self.win.overrideredirect(True)
         self.win.after(DIALOG_DURATION_MS, 
-            lambda:self.win.destroy()
+            lambda:self.close_window()
         )
         self.win.bind("<Key>",self.check_for_closing)
         self.win.protocol("WM_DELETE_WINDOW",self.disable_closing)
@@ -54,7 +61,7 @@ def force_shut_down():
     # OS X
         return
     elif platform == "win32":
-        os.system("shutdown /s /t 1")
+        os.system("shutdown /s /t 30")
     DialogueBox(message="Computer Will Be shutting down.")
 def open_warning_dialog():
     DialogueBox(message="Hello! Please Take some rest first")
