@@ -7,12 +7,16 @@ You must know how to download Python already. I'll be finding out a way to creat
 1. Clone File:
 2. If In Linux:
     * run *python (or python3 ) test.py &*
-    If in Windows:
+3. If in Windows:
     - press win + r
     - type *shell:startup*
     - put *main.py* in the folder opened
     - changed name to main.pyw
     - restart computer
+## Notes:
+1. To exit early, press 'E'
+2. To test the tkinter module, run it with --test parameter
+
 ## Things to do:
 1. Create a python "installer" script that allows for re-configuration whenever necessary.
 2. Create a "GUI" manager for computer limiter.
@@ -23,7 +27,4 @@ You must know how to download Python already. I'll be finding out a way to creat
 2. os
 3. datetime
 4. time
-
-## Notes:
-1. To exit early, press 'E'
-2. To test the tkinter module, run it with --test parameter
+5. winsound
